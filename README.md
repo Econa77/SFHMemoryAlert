@@ -31,9 +31,9 @@ Usage
 
 ```objc
 [SFHMemoryAlert setup];
-[SFHMemoryAlert setAutoShowAlert:NO];
-[SFHMemoryAlert setMaskType:SFHMemoryAlertMaskTypeNone];
-[SFHMemoryAlert setCountAfterShowing:3];
+[SFHMemoryAlert setAutoShowAlert:NO];  // Default YES
+[SFHMemoryAlert setMaskType:SFHMemoryAlertMaskTypeNone]; // Defailt Black
+[SFHMemoryAlert setCountAfterShowing:3]; // Default 0
 ```
 
 1. Call `[SFHMemoryAlert setup]` . A good place to do this is at the beginning of your app delegate's `application:didFinishLaunchingWithOptions:` method.
