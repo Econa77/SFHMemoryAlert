@@ -8,13 +8,14 @@
 
 /**
  *　TODO:
- *   ・support 3.5inch screen
  *   ・localize
  *   ・Use bundle image
  */
 
 #import "SFHMemoryAlert.h"
+
 #import "SFHNoticeLabelView.h"
+#import "UIDevice+SFHDevice.h"
 
 NSString * const SFHMemoryAlertWillDisappearNotification    = @"SFHMemoryAlertWillDisappearNotification";
 NSString * const SFHMemoryAlertDidDisappearNotification     = @"SFHMemoryAlertDidDisappearNotification";
@@ -175,42 +176,42 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
     BOOL isLandscape = UIInterfaceOrientationIsLandscape(orientation);
     if (isLandscape) {
         
-        self.alertView.frame = CGRectMake(0, 0, 538, 270);
+        self.alertView.frame = CGRectMake(0, 0, ([UIDevice is3_5inch]) ? 460 : 538, 270);
         self.alertView.center = self.center;
         
-        self.titleLabel.frame = CGRectMake(0, 26, 538, 25);
+        self.titleLabel.frame = CGRectMake(0, 26, CGRectGetWidth(self.alertView.frame), 25);
         
         
         self.topImageView.image = [UIImage imageNamed:@"landscape_image1"];
-        self.topImageView.frame = CGRectMake(58, 81, 153, 76);
+        self.topImageView.frame = CGRectMake((CGRectGetMidX(self.alertView.bounds) - 153) / 2, 81, 153, 76);
         
         self.bottomImageView.image = [UIImage imageNamed:@"landscape_image2"];
-        self.bottomImageView.frame = CGRectMake(307, 81, 193, 76);
+        self.bottomImageView.frame = CGRectMake(CGRectGetMidX(self.alertView.bounds) + ((CGRectGetMidX(self.alertView.bounds) - 193) / 2), 81, 193, 76);
         
-        self.topNoticeLabelView.frame = CGRectMake(0, 174, 269, 16);
+        self.topNoticeLabelView.frame = CGRectMake(0, 174, CGRectGetMidX(self.alertView.bounds), 16);
         
-        self.bottomNoticeLabelView.frame = CGRectMake(269, 174, 269, 16);
+        self.bottomNoticeLabelView.frame = CGRectMake(CGRectGetMidX(self.alertView.bounds), 174, CGRectGetMidX(self.alertView.bounds), 16);
         
-        self.closeButton.frame = CGRectMake(15, 215, 508, 39);
+        self.closeButton.frame = CGRectMake(15, 215, CGRectGetWidth(self.alertView.frame) - 30, 39);
         
     } else {
         
-        self.alertView.frame = CGRectMake(0, 0, 290, 518);
+        self.alertView.frame = CGRectMake(0, 0, 290, ([UIDevice is3_5inch]) ? 440 : 518);
         self.alertView.center = self.center;
         
-        self.titleLabel.frame = CGRectMake(0, 24, 290, 25);
+        self.titleLabel.frame = CGRectMake(0, ([UIDevice is3_5inch]) ? 12 : 24, CGRectGetWidth(self.alertView.frame), 25);
         
         self.topImageView.image = [UIImage imageNamed:@"portrait_image1"];
-        self.topImageView.frame = CGRectMake(60, 75, 170, 125);
+        self.topImageView.frame = CGRectMake(60, ([UIDevice is3_5inch]) ? 50 : 75, 170, 125);
         
         self.bottomImageView.image = [UIImage imageNamed:@"portrait_image2"];
-        self.bottomImageView.frame = CGRectMake(65, 270, 159, 125);
+        self.bottomImageView.frame = CGRectMake(65, ([UIDevice is3_5inch]) ? 215 : 270, 159, 125);
         
-        self.topNoticeLabelView.frame = CGRectMake(0, 220, 290, 16);
+        self.topNoticeLabelView.frame = CGRectMake(0, ([UIDevice is3_5inch]) ? 185 : 220, CGRectGetWidth(self.alertView.frame), 16);
         
-        self.bottomNoticeLabelView.frame = CGRectMake(0, 415, 290, 16);
+        self.bottomNoticeLabelView.frame = CGRectMake(0, ([UIDevice is3_5inch]) ? 355 : 415, CGRectGetWidth(self.alertView.frame), 16);
         
-        self.closeButton.frame = CGRectMake(15, 460, 260, 43);
+        self.closeButton.frame = CGRectMake(15, ([UIDevice is3_5inch]) ? 385 : 460, CGRectGetWidth(self.alertView.frame) - 30, 43);
         
     }
     
@@ -218,7 +219,7 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
     [self.closeButton setTitle:@"閉じる" forState:UIControlStateNormal];
     self.titleLabel.text = @"メモリが不足しています";
     [self.topNoticeLabelView setTitle:@"ホームボタンをダブルクリックします。" number:1];
-    [self.bottomNoticeLabelView setTitle:@"スワイプして他のアプリを終了してください。" number:2];
+    [self.bottomNoticeLabelView setTitle:@"他のアプリを上にスワイプしてください。" number:2];
     
 }
 

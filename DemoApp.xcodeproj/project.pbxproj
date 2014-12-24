@@ -15,6 +15,7 @@
 		FA14E2E71A4AB4B500836E56 /* portrait_image2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA14E2DF1A4AB4B500836E56 /* portrait_image2@3x.png */; };
 		FA14E2E81A4AB4B500836E56 /* landscape_image1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA14E2E01A4AB4B500836E56 /* landscape_image1@3x.png */; };
 		FA14E2E91A4AB4B500836E56 /* landscape_image2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA14E2E11A4AB4B500836E56 /* landscape_image2@3x.png */; };
+		FA1B3C741A4B156C002518A3 /* UIDevice+SFHDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1B3C731A4B156C002518A3 /* UIDevice+SFHDevice.m */; };
 		FA5FCEEC1A3D5EB500B938F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5FCEEB1A3D5EB500B938F8 /* main.m */; };
 		FA5FCEEF1A3D5EB500B938F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5FCEEE1A3D5EB500B938F8 /* AppDelegate.m */; };
 		FA5FCEF21A3D5EB500B938F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5FCEF11A3D5EB500B938F8 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		FA14E2DF1A4AB4B500836E56 /* portrait_image2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "portrait_image2@3x.png"; sourceTree = "<group>"; };
 		FA14E2E01A4AB4B500836E56 /* landscape_image1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscape_image1@3x.png"; sourceTree = "<group>"; };
 		FA14E2E11A4AB4B500836E56 /* landscape_image2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "landscape_image2@3x.png"; sourceTree = "<group>"; };
+		FA1B3C721A4B156C002518A3 /* UIDevice+SFHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SFHDevice.h"; sourceTree = "<group>"; };
+		FA1B3C731A4B156C002518A3 /* UIDevice+SFHDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SFHDevice.m"; sourceTree = "<group>"; };
 		FA5FCEE61A3D5EB500B938F8 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5FCEEA1A3D5EB500B938F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5FCEEB1A3D5EB500B938F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				FA5FCF1A1A3D5F5900B938F8 /* SFHMemoryAlert.m */,
 				FADC02171A49E71C00BF806C /* SFHNoticeLabelView.h */,
 				FADC02181A49E71C00BF806C /* SFHNoticeLabelView.m */,
+				FA1B3C721A4B156C002518A3 /* UIDevice+SFHDevice.h */,
+				FA1B3C731A4B156C002518A3 /* UIDevice+SFHDevice.m */,
 			);
 			path = SFHMemoryAlert;
 			sourceTree = SOURCE_ROOT;
@@ -282,6 +287,7 @@
 				FADC02191A49E71C00BF806C /* SFHNoticeLabelView.m in Sources */,
 				FA5FCEEF1A3D5EB500B938F8 /* AppDelegate.m in Sources */,
 				FA5FCEEC1A3D5EB500B938F8 /* main.m in Sources */,
+				FA1B3C741A4B156C002518A3 /* UIDevice+SFHDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
