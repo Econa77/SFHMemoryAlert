@@ -171,6 +171,7 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
 - (void)updatePosition {
 
     self.frame = [[UIScreen mainScreen] bounds];
+    self.alertView.transform = CGAffineTransformMakeRotation(0.0);
     
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     BOOL isLandscape = UIInterfaceOrientationIsLandscape(orientation);
@@ -215,7 +216,24 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
         
     }
     
-
+    if (![UIDevice isIOS8]) {
+        CGFloat rotateAngle = 0.0f;
+        switch (orientation) {
+            case UIInterfaceOrientationLandscapeRight:
+                rotateAngle = M_PI/2.0f;
+                break;
+            case UIInterfaceOrientationLandscapeLeft:
+                rotateAngle = -M_PI/2.0f;
+                break;
+            case UIInterfaceOrientationPortraitUpsideDown:
+                rotateAngle = M_PI;
+                break;
+            default:
+                break;
+        }
+        self.alertView.transform = CGAffineTransformMakeRotation(rotateAngle);
+    }
+    
     [self.closeButton setTitle:@"閉じる" forState:UIControlStateNormal];
     self.titleLabel.text = @"メモリが不足しています";
     [self.topNoticeLabelView setTitle:@"ホームボタンをダブルクリックします。" number:1];

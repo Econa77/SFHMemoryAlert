@@ -10,6 +10,12 @@
 
 @implementation UIDevice (SFHDevice)
 
++ (BOOL)isIOS8 {
+    NSString *osversion = [UIDevice currentDevice].systemVersion;
+    NSArray  *a = [osversion componentsSeparatedByString:@"."];
+    return ([(NSString *)[a objectAtIndex:0] intValue] >= 8);
+}
+
 + (BOOL)is3_5inch {
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     

@@ -10,6 +10,7 @@
 
 @interface UIDevice (SFHDevice)
 
++ (BOOL)isIOS8;
 + (BOOL)is3_5inch;
 
 @end
