@@ -18,13 +18,6 @@
 
 @implementation ViewController
 
-/*
- extern NSString * const SFHMemoryAlertWillDisappearNotification;
- extern NSString * const SFHMemoryAlertDidDisappearNotification;
- extern NSString * const SFHMemoryAlertWillAppearNotification;
- extern NSString * const SFHMemoryAlertDidAppearNotification;
-
-  */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.textField.delegate = self;

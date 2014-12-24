@@ -22,6 +22,7 @@
     [SFHMemoryAlert setup];
     //[SFHMemoryAlert setAutoShowAlert:NO];
     //[SFHMemoryAlert setMaskType:SFHMemoryAlertMaskTypeNone];
+    //[SFHMemoryAlert setCountAfterShowing:3];
     
     return YES;
 }

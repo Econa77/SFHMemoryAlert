@@ -9,7 +9,6 @@
 /**
  *　TODO:
  *   ・localize
- *   ・Use bundle image
  */
 
 #import "SFHMemoryAlert.h"
@@ -182,11 +181,10 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
         
         self.titleLabel.frame = CGRectMake(0, 26, CGRectGetWidth(self.alertView.frame), 25);
         
-        
-        self.topImageView.image = [UIImage imageNamed:@"landscape_image1"];
+        self.topImageView.image = [UIImage imageNamed:@"SFHMemoryAlert.bundle/landscape_image1"];
         self.topImageView.frame = CGRectMake((CGRectGetMidX(self.alertView.bounds) - 153) / 2, 81, 153, 76);
         
-        self.bottomImageView.image = [UIImage imageNamed:@"landscape_image2"];
+        self.bottomImageView.image = [UIImage imageNamed:@"SFHMemoryAlert.bundle/landscape_image2"];
         self.bottomImageView.frame = CGRectMake(CGRectGetMidX(self.alertView.bounds) + ((CGRectGetMidX(self.alertView.bounds) - 193) / 2), 81, 193, 76);
         
         self.topNoticeLabelView.frame = CGRectMake(0, 174, CGRectGetMidX(self.alertView.bounds), 16);
@@ -202,10 +200,10 @@ NSString * const SFHMemoryAlertDidAppearNotification        = @"SFHMemoryAlertDi
         
         self.titleLabel.frame = CGRectMake(0, ([UIDevice is3_5inch]) ? 12 : 24, CGRectGetWidth(self.alertView.frame), 25);
         
-        self.topImageView.image = [UIImage imageNamed:@"portrait_image1"];
+        self.topImageView.image = [UIImage imageNamed:@"SFHMemoryAlert.bundle/portrait_image1"];
         self.topImageView.frame = CGRectMake(60, ([UIDevice is3_5inch]) ? 50 : 75, 170, 125);
         
-        self.bottomImageView.image = [UIImage imageNamed:@"portrait_image2"];
+        self.bottomImageView.image = [UIImage imageNamed:@"SFHMemoryAlert.bundle/portrait_image2"];
         self.bottomImageView.frame = CGRectMake(65, ([UIDevice is3_5inch]) ? 215 : 270, 159, 125);
         
         self.topNoticeLabelView.frame = CGRectMake(0, ([UIDevice is3_5inch]) ? 185 : 220, CGRectGetWidth(self.alertView.frame), 16);
